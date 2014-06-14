@@ -9,6 +9,8 @@ public class Student {
 	String phone;
 	int group;
 	
+	private Subject subject;
+	
 	Address address;
 
 	public Student(){
@@ -44,6 +46,10 @@ public class Student {
 		age = a;
 		phone = p;
 		group = g;
+	}
+	
+	public void passHours(int hours){
+		subject.setHours(hours);
 	}
 	
 }
