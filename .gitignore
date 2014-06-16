@@ -1,1 +1,6 @@
+# Eclispe filters
 /bin
+
+/.settings
+.classpath
+.project
