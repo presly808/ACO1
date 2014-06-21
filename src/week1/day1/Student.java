@@ -52,4 +52,85 @@ public class Student {
 		subject.setHours(hours);
 	}
 	
+	
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public int getGroup() {
+		return group;
+	}
+
+	public void setGroup(int group) {
+		this.group = group;
+	}
+
+	public Subject getSubject() {
+		return subject;
+	}
+
+	public void setSubject(Subject subject) {
+		this.subject = subject;
+	}
+
+	public Address getAddress() {
+		return address;
+	}
+
+	public void setAddress(Address address) {
+		this.address = address;
+	}
+
+	@Override
+	public String toString() {
+		return "Student [name=" + name + ", age=" + age + ", phone=" + phone
+				+ "]";
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if(obj == null){
+			return false;
+		}
+		
+		if(this == obj) {
+			return true;
+		}
+		
+		if(!(obj instanceof Student)){
+			return false;
+		}
+		
+		Student other = (Student) obj;
+		
+		return this.name != null  ? 
+				(this.name.equals(other.getName()) && 
+						this.age == other.getAge()) : false ;
+	}
+	
+	
+	
+	
+	
 }
