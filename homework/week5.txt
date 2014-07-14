@@ -4,8 +4,6 @@
 	Queue		- http://www.cs.usfca.edu/~galles/visualization/QueueLL.html
 	Recursion
 	
-	
-	
 2. Реализовать структуру данных Двунаправленную Очередь(Dequeue). НА ОСНОВЕ СВЯЗНОГО СПИСКА
 	- добавить элемент в хвост
 	- добавить элемент в голову

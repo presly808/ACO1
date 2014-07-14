@@ -1,11 +1,16 @@
 package week5.day1.gen.task_1;
 
+import java.util.Arrays;
+import java.util.Iterator;
+
+import com.sun.jndi.url.iiopname.iiopnameURLContextFactory;
+
 /*
  * TODO: implement Comparable, override equals, toString, 
  * sort using InsertionAlgorithm see <T extends Comparable<T>>
  */
 
-public class MyArray<T> implements IArray<T> {
+public class MyArray<T> implements IArray<T>, Iterable<T> {
 
 	private T[] mas; 
 	private int index;
@@ -65,7 +70,43 @@ public class MyArray<T> implements IArray<T> {
 			System.out.print(mas[i] + " ");
 		}
 	}
+
+	@Override
+	public String toString() {
+		String res = "[";
+		for(int i = 0; i < index; i++){
+			res += mas[i].toString() + ",";
+		}
+		res+="]";
+		
+		return res;
+	}
 	
+	@Override
+	public Iterator<T> iterator() {
+		return new MyArrayIterator();
+	}
+
+	private class MyArrayIterator implements Iterator<T> {
+
+		private int iterIndex = 0;
+		
+		@Override
+		public boolean hasNext() {
+			return iterIndex < index;
+		}
+
+		@Override
+		public T next() {
+			return mas[iterIndex++];
+		}
+
+		@Override
+		public void remove() {
+			throw new UnsupportedOperationException();
+		}
+		
+	}
 	//
 	
 }
