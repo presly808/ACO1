@@ -55,7 +55,8 @@ public class SimpleFileManager extends JFrame {
 	private void initListModel(File selected){
 		
 		if(selected == null || selected.isFile()){
-			JOptionPane.showMessageDialog(this, "Can't open the file\nWrite implementation");
+			JOptionPane.showMessageDialog(this, "Can't open the file\nWrite implementation",
+					"Dont know how to open", JOptionPane.ERROR_MESSAGE);
 			return;
 		}
 		
