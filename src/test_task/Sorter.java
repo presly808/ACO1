@@ -26,9 +26,9 @@ public class Sorter {
 
             for(int j = i + 1; j <= end; j++){
                 if(mas[j] < value){
-                    minI = j;
+                    minI = j; 
                     value = mas[j];
-                } else if(mas[j] == value){
+                } else if(mas[j] == value){ // condition for duplicates 
                     duplicates[counterForDuplicates++] = mas[j]; // put into mas for duplicates
                     swap(mas, j, end--);//duplicate go to end position, end limit will decrease
                 }
@@ -46,35 +46,31 @@ public class Sorter {
     	duplicates = Arrays.copyOf(duplicates, duplicates.length - end - 1);
     }
     
-    
-
     public char[] getSorted() {
 		return sorted;
 	}
 
-
-
 	public char[] getDuplicates() {
 		return duplicates;
 	}
-
-
 
 	private void swap(char[] mas, int a, int b){
         char t = mas[a];
         mas[a] = mas[b];
         mas[b] = t;
     }
+	
+    @Override
+	public String toString() {
+		return "sorted=" + Arrays.toString(sorted) + "\nduplicates="
+				+ Arrays.toString(duplicates);
+	}
 
-
-    public static void main(String[] args) {
+	public static void main(String[] args) {
         Sorter sorter = new Sorter();
     	char[] mas = {'4','1','r','N','2','g','5','1','9','g','5','4'};
         sorter.sortWithNoDuplicates(mas);
-        System.out.println("SORTED MAS");
-        System.out.println(Arrays.toString(sorter.getSorted()));
-        System.out.println("DUPLICATES");
-        System.out.println(Arrays.toString(sorter.getDuplicates()));
+        System.out.println(sorter);
 
     }
 
